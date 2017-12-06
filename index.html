@@ -1,0 +1,21 @@
+---
+layout: main
+---
+<div class="component posts-wrapper">
+    {% for post in paginator.posts %}
+    <article class="posts-wrapper__element">
+        {% if post.thumbnail %}
+            <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
+        {% else %}
+        {% endif %}
+        <div class="post-content">
+            <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+            <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
+            <span class="post-date">{{post.date | date: "%m/%d/%Y" }}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+            <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min czytania" }}{% endunless %}</span>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+{% include pagination.html %}

@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "Jekyll - pierwsze kroki"
-date:   2017-12-06 21:17:02 +0100
+title:  "Dlaczego akurat blog ?"
+date:   2017-12-01 21:17:02 +0100
 categories: jekyll update
-thumbnail: jekkyl-introduction.jpg
 ---
-Nie wiesz jak się za to zabrać ? Sprwadź koniecznie w jaki sposób uruchomić środowisko blogowe oparte na Jekkylu.
+O czym będzie ten blog ?
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 

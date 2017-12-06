@@ -26,14 +26,25 @@ twitter_username: jekyllrb
 github_username:  jekyll
 author: Krzysztof Wielicki
 
+# Buttons labels
+read__more: Przeczytaj więcej
+
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+paginate: 8
+paginate_path: "/page/:num"
+
 sass:
     sass_dir: _sass
     style: :compressed
+
+gems:
+    - octopress-autoprefixer
+    - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

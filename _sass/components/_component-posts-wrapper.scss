@@ -1,0 +1,8 @@
+.posts-wrapper {
+    display: flex;
+    &__element {
+        width: calc(100% / 3);
+        border: 1px solid rgba(red(#eee), green(#eee), blue(#eee), 1);
+        border-bottom-width: 3px;
+    }
+}

@@ -3,7 +3,10 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    autoprefixer-rails (7.2.1)
+      execjs
     colorator (1.1.0)
+    execjs (2.7.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
     jekyll (3.6.2)
@@ -32,6 +35,9 @@ GEM
     mercenary (0.3.6)
     minima (2.1.1)
       jekyll (~> 3.3)
+    octopress-autoprefixer (2.0.1)
+      autoprefixer-rails
+      jekyll (~> 3.0)
     pathutil (0.16.0)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.1)
@@ -54,6 +60,7 @@ DEPENDENCIES
   jekyll (~> 3.6.2)
   jekyll-feed (~> 0.6)
   minima (~> 2.0)
+  octopress-autoprefixer
   tzinfo-data
 
 BUNDLED WITH
