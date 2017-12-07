@@ -1,9 +1,10 @@
 .posts-wrapper {
     $root: &;
     display: flex;
-    margin: $grid-gutter-width 0 0 0;
+    margin: $grid-gutter-width 0;
     &__element {
         width: calc(100% / 3);
+        padding: 0 15px;
         transition: $transition-default;
         &:hover {
             #{$root}__content {
