@@ -2,6 +2,7 @@
 layout: post
 title:  "Jekyll - pierwsze kroki"
 date:   2017-12-06 21:17:02 +0100
+tags: "technologia"
 categories: jekyll update
 thumbnail: jekkyl-introduction.jpg
 ---

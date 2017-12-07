@@ -1,0 +1,20 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: $border-radius-base;
+    border: 0;
+    transition: $transition-default;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+}
+.btn-primary {
+    background-color: $brand-primary;
+    color: #fff;
+    &:active, &:focus, &:hover, &:active:focus {
+        outline: none;
+        border: 0;
+        color: #fff;
+        background-color: lighten($brand-primary, 4%);
+    }
+}

@@ -1,8 +1,44 @@
 .posts-wrapper {
+    $root: &;
     display: flex;
+    margin: $grid-gutter-width 0;
     &__element {
-        width: calc(100% / 3);
-        border: 1px solid rgba(red(#eee), green(#eee), blue(#eee), 1);
+        width: calc(100% / 3 - 15px);
+        // margin-bottom: $grid-gutter-width / 2;
+        // transition: $transition-default;
+        &:hover {
+            #{$root}__content {
+                border-bottom-color: $border-color;
+            }
+        }
+    }
+    &__content {
+        padding: $grid-gutter-width / 2;
+        border: 1px solid $border-color-gray;
         border-bottom-width: 3px;
+    }
+    &__title {
+        margin-top: 0;
+    }
+    &__info {
+        display: flex;
+        margin-bottom: 0;
+        margin-top: $grid-gutter-width;
+        font-size: $font-size-small;
+        flex-wrap: wrap;
+        border-top: 1px solid $border-color-gray;
+        padding-top: 15px;
+        li {
+            flex: 0 0 50%;
+        }
+    }
+    &__words {
+        text-align: right;
+    }
+    &__tags {
+        li {
+            background-color: lighten($text-color, 20%);
+            color: #fff;
+        }
     }
 }

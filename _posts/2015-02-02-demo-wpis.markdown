@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Dlaczego akurat blog ?"
-date:   2017-12-01 21:17:02 +0100
+date:   2015-12-01 21:17:02 +0100
 tags: "ciekawostka"
 categories: jekyll update
 thumbnail: blog-introduction.jpg

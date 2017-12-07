@@ -19,8 +19,12 @@ const bJekkyl = {
         let msnry = new Masonry( elem, {
           // options
           itemSelector: '.posts-wrapper__element',
-          columnWidth: 200
+          percentPosition: true,
+          gutter: 15,
+          originLeft: false,
+          horizontalOrder: true
         });
+
     }
 };
 

@@ -19,6 +19,13 @@
     &__tag,
     &__title,
     &__description {
+        max-width: $container-tablet / 1.5;
         color: #fff;
+    }
+    &__title {
+        margin-top: 0;
+    }
+    &__description {
+        padding-bottom: 15px;
     }
 }

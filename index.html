@@ -8,11 +8,19 @@ layout: main
             <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
         {% else %}
         {% endif %}
-        <div class="post-content">
-            <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-            <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
-            <span class="post-date">{{post.date | date: "%m/%d/%Y" }}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-            <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min czytania" }}{% endunless %}</span>
+        <div class="posts-wrapper__content">
+            {% if post.tags %}
+                <ul class="posts-wrapper__tags component tag">
+                    <li>{{ post.tags }}</li>
+                </ul>
+            {% else %}
+            {% endif %}
+            <h2 class="posts-wrapper__title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+            <p class="posts-wrapper__description">{{ post.content | strip_html | truncatewords: 15 }}</p>
+            <ul class="list-unstyled posts-wrapper__info">
+                <li class="posts-wrapper__date">Opublikowany <time datetime="{{post.date | date: "%m/%d/%Y" }}" class="code">{{post.date | date: "%m/%d/%Y" }}</time></li>
+                <li class="posts-wrapper__words">Szacunkowy czas czytania <span class="code">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min" }}{% endunless %}</span></li>
+            </ul>
         </div>
     </article>
     {% endfor %}

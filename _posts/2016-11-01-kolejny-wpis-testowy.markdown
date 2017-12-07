@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Dlaczego akurat blog ?"
-date:   2017-12-01 21:17:02 +0100
-tags: "ciekawostka"
+title:  "Wpis testowy"
+date:   2016-11-01 21:17:02 +0100
+tags: "testowy"
 categories: jekyll update
 thumbnail: blog-introduction.jpg
 ---
