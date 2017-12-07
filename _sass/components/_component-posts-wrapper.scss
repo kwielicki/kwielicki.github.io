@@ -1,7 +1,7 @@
 .posts-wrapper {
     $root: &;
     display: flex;
-    margin: $grid-gutter-width -($grid-gutter-width / 2);
+    margin: $grid-gutter-width (-$grid-gutter-width / 2);
     &__element {
         width: calc(100% / 3);
         padding: 0 15px;
