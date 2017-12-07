@@ -1,11 +1,10 @@
 .posts-wrapper {
     $root: &;
     display: flex;
-    margin: $grid-gutter-width 0;
+    margin: $grid-gutter-width 0 0 0;
     &__element {
-        width: calc(100% / 3 - 15px);
-        // margin-bottom: $grid-gutter-width / 2;
-        // transition: $transition-default;
+        width: calc(100% / 3);
+        transition: $transition-default;
         &:hover {
             #{$root}__content {
                 border-bottom-color: $border-color;
