@@ -26,7 +26,4 @@ const bJekkyl = {
 };
 
 bJekkyl.linkedElement();
-
-document.addEventListener("DOMContentLoaded", function() {
-    bJekkyl.createPostsLayout();
-});
+bJekkyl.createPostsLayout();
