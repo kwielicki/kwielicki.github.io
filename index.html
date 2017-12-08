@@ -2,7 +2,13 @@
 layout: main
 ---
 <div class="row">
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form action="/search.html" method="get">
+    		<label for="search_box">Search</label>
+    		<input type="text" id="search_box" name="query">
+    		<input type="submit" value="search">
+    	</form>
+    </div>
     <div class="col-md-8">
         <div class="component posts-wrapper">
             {% for post in paginator.posts %}
