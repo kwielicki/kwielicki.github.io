@@ -13,7 +13,7 @@ if (results.length) { // Are there any results?
 
   searchResults.innerHTML = appendString;
 } else {
-  searchResults.innerHTML = '<li>No results found</li>';
+  searchResults.innerHTML = '<li>Brak wyników.</li>';
 }
 }
 
@@ -43,19 +43,21 @@ var idx = lunr(function () {
   this.field('author');
   this.field('category');
   this.field('content');
+  for (var key in window.store) { // Add the data to lunr
+      this.add({
+          'id': key,
+          'title': window.store[key].title,
+          'author': window.store[key].author,
+          'category': window.store[key].category,
+          'content': window.store[key].content
+      });
+
+  }
+
 });
+var results = idx.search(searchTerm); // Get lunr to perform a search
+displaySearchResults(results, window.store); // We'll write this in the next section
 
-for (var key in window.store) { // Add the data to lunr
-  idx.add({
-    'id': key,
-    'title': window.store[key].title,
-    'author': window.store[key].author,
-    'category': window.store[key].category,
-    'content': window.store[key].content
-  });
 
-  var results = idx.search(searchTerm); // Get lunr to perform a search
-  displaySearchResults(results, window.store); // We'll write this in the next section
-}
 }
 })();

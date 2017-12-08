@@ -1,0 +1,35 @@
+.form {
+    position: relative;
+    margin: $grid-gutter-width 0;
+}
+.form-control {
+    &--search {
+        height: 50px;
+        padding-right: 50px;border: 0;
+        box-shadow: none;
+        font-size: $font-size-h4;
+        line-height: 1;
+        padding: 0.56em 0.76em;
+        border: 2px solid $border-color-gray;
+        border-bottom: 3px solid #eee;
+    }
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: $border-color-gray;
+        border-bottom-color: $border-color;
+    }
+}
+.btn-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    height: 50px;
+    width: 50px;
+    font-size: 1.25em;
+    color: #777;
+    line-height: 50px;
+    margin-top: -2px;
+}

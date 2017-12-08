@@ -3,10 +3,10 @@ layout: main
 ---
 <div class="row">
     <div class="col-md-4">
-        <form action="/search.html" method="get">
-    		<label for="search_box">Search</label>
-    		<input type="text" id="search_box" name="query">
-    		<input type="submit" value="search">
+        <!-- Wyszukiwarka -->
+        <form action="{{ site.baseurl }}/search" method="get" class="component form">
+    		<input type="text" id="search_box" name="query" class="form-control form-control--search" placeholder="Wyszukaj...">
+    		<button type="submit" value="search" class="btn-submit"><i class="fa fa-search fa-fw"></i></button>
     	</form>
     </div>
     <div class="col-md-8">
