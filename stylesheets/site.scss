@@ -1,24 +1,8 @@
 ---
 ---
-@import "../_sass/bootstrap/variables";
 
 /* Overwriting bootstrap variables */
-$brand-primary: #ec3f75;
-
-$font-family-monospace:    'VT323', monospace;
-$font-family-base:         'Advent Pro', sans-serif;
-$font-size-base: 16px;
-$font-size-h2:            floor(($font-size-base * 1.8));
-
-$headings-font-family:     $font-family-monospace;
-
-$border-color: rgba(red($brand-primary), green($brand-primary), blue($brand-primary), .4);
-$border-color-gray: rgba(red(#eee), green(#eee), blue(#eee), 1);
-$border-radius-base: 2px;;
-$btn-font-weight: 400;
-$btn-primary-color: #333;
-
-$transition-default: all 250ms cubic-bezier(0.55, 0, 0.1, 1) 0s;
+@import "../_sass/custom-bootstrap";
 
 @import "../_sass/bootstrap";
 

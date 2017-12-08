@@ -16,12 +16,18 @@ const bJekkyl = {
     },
     createPostsLayout: function() {
         let elem = document.querySelector('.posts-wrapper');
-        let msnry = new Masonry( elem, {
-          // options
-          itemSelector: '.posts-wrapper__element',
-          percentPosition: true
-        });
+        let buttonElement = elem.querySelectorAll('.btn--posts');
 
+        buttonElement.forEach(element => {
+            element.addEventListener('mouseover', function() {
+                element.classList.add('hovered');
+                element.parentNode.closest('div').previousSibling.previousElementSibling.classList.add('hovered')
+            });
+            element.addEventListener('mouseout', function() {
+                element.classList.remove('hovered');
+                element.parentNode.closest('div').previousSibling.previousElementSibling.classList.remove('hovered')
+            });
+        });
     }
 };
 

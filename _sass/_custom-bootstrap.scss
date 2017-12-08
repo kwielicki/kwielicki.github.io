@@ -1,0 +1,32 @@
+// Colors [text]
+$brand-primary: #ec3f75;
+
+// Fonts
+$font-family-monospace:    'VT323', monospace;
+$font-family-base:         'Advent Pro', sans-serif;
+$font-size-base: 16px;
+$font-size-h2:            floor(($font-size-base * 1.8));
+
+$headings-font-family:     $font-family-monospace;
+
+// Borders
+$border-color: rgba(red($brand-primary), green($brand-primary), blue($brand-primary), .4);
+$border-color-gray: rgba(red(#eee), green(#eee), blue(#eee), 1);
+$border-radius-base: 2px;
+
+// Buttons
+$btn-font-weight: 400;
+$btn-primary-color: #333;
+
+// Transitions
+$transition-default: all 250ms cubic-bezier(0.55, 0, 0.1, 1) 0s;
+
+// Container width
+$container-large-desktop:      (1200px);
+
+// Spacers
+$spacer-xs: 10px;
+$spacer-sm: 20px;
+$spacer-md: 30px;
+$spacer-lg: 40px;
+$spacer-xl: 50px;

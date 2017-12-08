@@ -27,7 +27,9 @@ github_username:  jekyll
 author: Krzysztof Wielicki
 
 # Buttons labels
-read__more: Przeczytaj więcej
+read__more: Czytaj artykuł
+pagination__next: Przejdź do strony
+pagination__prev: Wróć do strony
 
 # Build settings
 markdown: kramdown

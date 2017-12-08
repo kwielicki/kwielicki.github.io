@@ -1,29 +1,37 @@
 ---
 layout: main
 ---
-<div class="component posts-wrapper">
-    {% for post in paginator.posts %}
-    <article class="posts-wrapper__element">
-        {% if post.thumbnail %}
-            <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
-        {% else %}
-        {% endif %}
-        <div class="posts-wrapper__content">
-            {% if post.tags %}
-                <ul class="posts-wrapper__tags component tag">
-                    <li>{{ post.tags }}</li>
-                </ul>
-            {% else %}
-            {% endif %}
-            <h2 class="posts-wrapper__title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-            <p class="posts-wrapper__description">{{ post.content | strip_html | truncatewords: 15 }}</p>
-            <ul class="list-unstyled posts-wrapper__info">
-                <li class="posts-wrapper__date">Opublikowany <time datetime="{{post.date | date: "%m/%d/%Y" }}" class="code">{{post.date | date: "%m/%d/%Y" }}</time></li>
-                <li class="posts-wrapper__words">Czas czytania <span class="code">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min" }}{% endunless %}</span></li>
-            </ul>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <div class="component posts-wrapper">
+            {% for post in paginator.posts %}
+            <article class="posts-wrapper__element">
+                {% if post.thumbnail %}
+                    <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
+                {% else %}
+                {% endif %}
+                <div class="posts-wrapper__content">
+                    {% if post.tags %}
+                        <ul class="posts-wrapper__tags component tag">
+                            <li>{{ post.tags }}</li>
+                        </ul>
+                    {% else %}
+                    {% endif %}
+                    <h2 class="posts-wrapper__title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+                    <p class="posts-wrapper__description">{{ post.content | strip_html | truncatewords: 15 }}</p>
+                    <ul class="list-unstyled posts-wrapper__info">
+                        <li class="posts-wrapper__date">Opublikowany <time datetime="{{post.date | date: "%m/%d/%Y" }}" class="code">{{post.date | date: "%m/%d/%Y" }}</time></li>
+                        <li class="posts-wrapper__words">Czas czytania <span class="code">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min" }}{% endunless %}</span></li>
+                    </ul>
+                </div>
+                <div class="posts-wrapper__button">
+                    <a href="{{post.url | prepend: site.baseurl}}" title="{{post.title}}" class="btn btn-primary btn--posts btn-xl">{{ site.read__more }} <span class="btn-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+                </div>
+            </article>
+            {% endfor %}
         </div>
-    </article>
-    {% endfor %}
+    </div>
 </div>
 
 {% include pagination.html %}

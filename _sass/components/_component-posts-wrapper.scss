@@ -1,11 +1,11 @@
 .posts-wrapper {
     $root: &;
-    display: flex;
     margin: $grid-gutter-width (-$grid-gutter-width / 2);
     &__element {
-        width: calc(100% / 3);
-        padding: 0 15px;
-        transition: $transition-default;
+        @include clearfix;
+        width: 100%;
+        padding: 0 $grid-gutter-width/2;
+        margin-bottom: $spacer-lg;
         &:hover {
             #{$root}__content {
                 border-bottom-color: $border-color;
@@ -16,6 +16,10 @@
         padding: $grid-gutter-width / 2;
         border: 1px solid $border-color-gray;
         border-bottom-width: 3px;
+        transition: $transition-default;
+        &.hovered {
+            border-bottom-color: $border-color;
+        }
     }
     &__title {
         margin-top: 0;
@@ -40,5 +44,10 @@
             background-color: lighten($text-color, 20%);
             color: #fff;
         }
+    }
+    &__button {
+        position: relative;
+        top: -3px;
+        float: right;
     }
 }

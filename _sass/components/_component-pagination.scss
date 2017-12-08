@@ -1,0 +1,13 @@
+.pagination {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    li {
+        display: inline-block;
+        a {
+            display: block;
+            background-color: #f8f8f8;
+            padding: 0 $spacer-xs;
+        }
+    }
+}
