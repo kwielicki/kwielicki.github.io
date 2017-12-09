@@ -1,3 +1,5 @@
+{% for post in site.posts limit:1 %}
+{% if post.thumbnail %}
 <div class="component newest-post" style="background-image: url({{"/assets/images/banners/blog-banner.jpg" | prepend: site.baseurl}})">
     <div class="newest-post__inner">
         <div class="container">
@@ -6,11 +8,14 @@
                     <ul class="newest-post__tag component tag">
                         <li>technologia</li>
                     </ul>
-                    <h1 class="newest-post__title">Jekkyl - wprowadzenie do&nbsp;nowoczesnego systemu blogowego</h1>
-                    <p class="newest-post__description">Pozwala ona w relatywnie prosty sposób przygotować oraz opublikować blog'a&nbsp;w sieci.</p>
-                    <a href="" class="btn btn-lg btn-primary">{{ site.read__more }}</a>
+                    <h1 class="newest-post__title">{{ post.title }}</h1>
+                    <p class="newest-post__description">{{ post.content | strip_html | truncatewords: 30 }}</p>
+                    <a href="{{ post.url }}" class="btn btn-lg btn-primary">{{ site.read__more }}</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% else %}
+{% endif %}
+{% endfor %}
