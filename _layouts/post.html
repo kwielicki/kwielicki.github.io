@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% include header.html %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <article class="componet post" itemscope itemtype="http://schema.org/BlogPosting">
+              <header class="post__header">
+                <img src="{{baseurl}}/assets/images/posts/original/{{page.thumbnail}}" alt="">
+                <div class="post__media">
+                    <div class="post__media--left">
+                        <div class="post__data">
+                            <div class="post__data--day">{{ page.date | date: "%d" }}</div>
+                            <div class="post__data--footer">
+                                {% assign m = page.date | date: "%-m" %}
+                                {% case m %}
+                                  {% when '1' %}sty
+                                  {% when '2' %}lut
+                                  {% when '3' %}mar
+                                  {% when '4' %}kwi
+                                  {% when '5' %}maj
+                                  {% when '6' %}cze
+                                  {% when '7' %}lip
+                                  {% when '8' %}sie
+                                  {% when '9' %}wrz
+                                  {% when '10' %}paź
+                                  {% when '11' %}lis
+                                  {% when '12' %}gru
+                                {% endcase %}
+                                {{ page.date | date: "%Y" }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__media--right">
+                        <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-folder-open" aria-hidden="true"></i> Napisany w kategorii {{page.categories}}</li>
+                            {% if page.author %}
+                                <li><i class="fa fa-user" aria-hidden="true"></i> przez
+                                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <span itemprop="name">{{ page.author }}</span>
+                                    </span>
+                                </li>
+                            {% endif %}
+                            <li><i class="fa fa-comments" aria-hidden="true"></i> 46 komentarzy</li>
+                        </ul>
+                    </div>
+                </div>
+              </header>
+
+              <div class="post__content" itemprop="articleBody">
+                {{ content }}
+              </div>
+
+              {% if site.disqus.shortname %}
+                {% include disqus_comments.html %}
+              {% endif %}
+            </article>
+
+        </div>
+    </div>
+</div>

@@ -33,3 +33,10 @@ const bJekkyl = {
 
 bJekkyl.linkedElement();
 bJekkyl.createPostsLayout();
+
+//Owl Carousel initlializator
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+      items: 1
+  });
+});

@@ -1,0 +1,17 @@
+pre {
+    position: relative;
+    overflow: visible;
+    margin-top: $spacer-md;
+    margin-bottom: $spacer-sm;
+    &::before {
+        content: 'Terminal';
+        position: absolute;
+        bottom: 100%;
+        left: -1px;
+        right: -1px;
+        color: #fff;
+        background-color: $text-color;
+        border: 1px solid $text-color;
+        padding-left:   $spacer-sm;
+    }
+}

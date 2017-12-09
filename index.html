@@ -8,6 +8,77 @@ layout: main
     		<input type="text" id="search_box" name="query" class="form-control form-control--search" placeholder="Wyszukaj...">
     		<button type="submit" value="search" class="btn-submit"><i class="fa fa-search fa-fw"></i></button>
     	</form>
+
+        <!-- Kategorie -->
+        <div class="component categories widget">
+            <h3 class="widget__header">{{ site.category__label}}</h3>
+            <div class="widget__inner">
+                {% for category in site.categories %}
+                    <div div class="categories__group">
+                        {% capture category_name %}{{ category | first }}{% endcapture %}
+                        <div class="categories__element"
+                             data-category-name="{{ category_name }}"
+                             data-category-count="{{ category | last | size }}"
+                             data-site-href="{{baseurl}}/categories#{{category_name}}">
+                            <h4 class="categories__header">
+                                <span class="categories__name">{{ category_name }}</span>
+                                <span class="categories__posts-counter">({{ category | last | size }})</span>
+                            </h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Tagi -->
+        <div class="component tags widget">
+            <h3 class="widget__header">{{ site.tags__label}}</h3>
+            <div class="widget__inner">
+                {% for tag in site.tags %}
+                    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+                    <a href="{{baseurl}}/tags#{{tag_name | capitalize }}" data-tag-name="{{ tag_name }}" data-tags-count="{{ tag | last | size }}" class="tag">
+                        <span class="tag__name">{{ tag_name }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Popularne posty -->
+        <div class="component latest-posts widget">
+            <h3 class="widget__header">Popularne posty</h3>
+            <div class="widget__inner">
+                <div class="owl-carousel owl-theme">
+                    {% for post in site.posts limit:3 %}
+                        <div class="latest-post">
+                            <div class="latest-post__image">
+                                {% if post.thumbnail %}
+                                    <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
+                                {% else %}
+                                {% endif %}
+                            </div>
+                            <div class="latest-post__content">
+                                <h5 class="latest-post__title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+                                <div class="latest-post__data">
+                                    Opublikowany <time datetime="{{post.date | date: "%m/%d/%Y" }}" class="code" itemprop="datePublished">{{post.date | date: "%m/%d/%Y" }}</time>
+                                </div>
+                            </div>
+                        </div>
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- O blogu -->
+        <div class="component about-blog widget">
+            <h3 class="widget__header">{{ site.about_blog__label}}</h3>
+            <div class="widget__inner">
+                <p class="about-blog__description">
+                    Frontend__PL jest miejscem, które agreguje wiedzę dotyczącą tworzenia stron internetowych, oraz aplikacji mobilnych.
+                </br>
+                    Przeznaczeniem tego bloga jest przedstawienie skomplikowanych rzeczy w możliwie najprostszy sposób.
+                </p>
+            </div>
+        </div>
     </div>
     <div class="col-md-8">
         <div class="component posts-wrapper">
@@ -27,7 +98,10 @@ layout: main
                     <h2 class="posts-wrapper__title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
                     <p class="posts-wrapper__description">{{ post.content | strip_html | truncatewords: 15 }}</p>
                     <ul class="list-unstyled posts-wrapper__info">
-                        <li class="posts-wrapper__date">Opublikowany <time datetime="{{post.date | date: "%m/%d/%Y" }}" class="code">{{post.date | date: "%m/%d/%Y" }}</time></li>
+                        <li class="posts-wrapper__date">
+                            Opublikowany <time datetime="{{post.date | date: "%m/%d/%Y" }}" class="code">{{post.date | date: "%m/%d/%Y" }}</time>
+                            &nbsp;przez {{ post.author }}
+                        </li>
                         <li class="posts-wrapper__words">Czas czytania <span class="code">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " min" }}{% endunless %}</span></li>
                     </ul>
                 </div>

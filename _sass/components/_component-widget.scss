@@ -1,0 +1,91 @@
+.widget {
+    &__header {
+        background-color: $border-color-gray;
+        margin-bottom: 0;
+        padding: $spacer-sm;
+    }
+    &__inner {
+        background-color: #f8f8f8;
+        padding: $spacer-sm;
+    }
+}
+
+// Kategorie
+.categories {
+    &__header {
+        margin: 0;
+        display: table;
+        width: 100%;
+        font-family: $font-family-base;
+        cursor: pointer;
+        transition: $transition-default;
+        &:hover {
+            color: $brand-primary;
+        }
+    }
+    &__group {
+        padding-bottom: $spacer-sm;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    &__name,
+    &__posts-counter {
+        display: table-cell;
+        width: 50%;
+    }
+    &__posts-counter {
+        text-align: right;
+    }
+}
+
+// Tags
+.tags {
+    .widget__inner {
+        padding: $spacer-sm;
+        padding-bottom: $spacer-xs;
+    }
+    .tag {
+        display: inline-block;
+        background-color: $gray-light;
+        border-radius: $border-radius-base;
+        color: #fff;
+        padding: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:hover {
+            text-decoration: none;
+            background-color: $brand-primary;
+        }
+    }
+}
+
+// About blog
+.about-blog {
+    &__description {
+        margin-bottom: 0;
+    }
+}
+
+// Latest post
+.latest-post {
+    &__image,
+    &__content {
+        display: table-cell;
+        vertical-align: top;
+    }
+    &__image {
+        max-width: 150px;
+        min-width: 150px;
+    }
+    &__title {
+        margin: 0;
+        font-family: $font-family-base;
+    }
+    &__data {
+        font-size: 12px;
+    }
+    &__content {
+        padding-left: $spacer-sm;
+    }
+}
