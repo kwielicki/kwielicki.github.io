@@ -34,6 +34,9 @@
         padding-top: 15px;
         li {
             flex: 0 0 50%;
+            @media (max-width: $screen-sm-min) {
+                flex: none;
+            }
         }
     }
     &__words {
@@ -49,5 +52,13 @@
         position: relative;
         top: -3px;
         float: right;
+        @media (max-width: $screen-sm-min) {
+            float: none;
+        }
+        .btn {
+            @media (max-width: $screen-sm-min) {
+                display: block;
+            }
+        }
     }
 }

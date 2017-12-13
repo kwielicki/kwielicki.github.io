@@ -1,7 +1,7 @@
 .pagination {
     display: block;
     text-align: center;
-    margin: 0 auto;
+    margin: $spacer-sm auto;
     li {
         display: inline-block;
         a {

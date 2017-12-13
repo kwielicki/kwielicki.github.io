@@ -1,0 +1,10 @@
+.footer {
+    &__inner {
+        text-align: center;
+    }
+    .copyright {
+        display: block;
+        padding: $spacer-xs 0;
+        border-top: 1px solid $gray-lighter;
+    }
+}

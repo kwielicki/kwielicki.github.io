@@ -24,6 +24,9 @@
     }
     &__title {
         margin-top: 0;
+        @media (max-width: $screen-sm-min) {
+            font-size: $font-size-h3;
+        }
     }
     &__description {
         padding-bottom: 15px;
