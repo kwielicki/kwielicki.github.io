@@ -40,7 +40,7 @@ about_blog__label: Kilka słów o blogu
 comments:
    provider: disqus
 disqus:
-   short_name: codefree
+   short_name: https-kwielicki-github-io
 
 # Build settings
 markdown: kramdown
