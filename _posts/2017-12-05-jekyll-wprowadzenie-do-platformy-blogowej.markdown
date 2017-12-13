@@ -6,6 +6,7 @@ date:   2017-12-06 21:17:02 +0100
 tags: "technologia"
 categories: Technologia
 thumbnail: jekyll-wprowadzenie.jpg
+comments: true
 ---
 O technologii <code>Jekyll</code> dowiedziałem się przypadkowo z agendy jednego z moich kolegów po fachu.
 Z racji tego, że było to na tyle ciekawe wystąpienie aby mnie zainteresować tym zagadnieniem

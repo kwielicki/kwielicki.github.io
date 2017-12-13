@@ -36,6 +36,12 @@ category__label: Kategorie
 tags__label: Tagi
 about_blog__label: Kilka słów o blogu
 
+# Disquis
+comments:
+   provider: disqus
+disqus:
+   short_name: codefree
+
 # Build settings
 markdown: kramdown
 theme: minima
