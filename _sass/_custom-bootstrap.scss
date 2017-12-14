@@ -13,6 +13,7 @@ $headings-font-family:     $font-family-monospace;
 $border-color: rgba(red($brand-primary), green($brand-primary), blue($brand-primary), .4);
 $border-color-gray: rgba(red(#eee), green(#eee), blue(#eee), 1);
 $border-radius-base: 2px;
+$border-radius-sm: 8px 0;
 
 // Buttons
 $btn-font-weight: 400;

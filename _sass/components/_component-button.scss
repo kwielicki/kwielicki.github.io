@@ -3,7 +3,7 @@
     display: inline-block;
     overflow: hidden;
     cursor: pointer;
-    border-radius: $border-radius-base;
+    border-radius: $border-radius-sm;
     border: 0;
     transition: $transition-default;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
@@ -15,7 +15,7 @@
         outline: none;
         border: 0;
         color: #fff;
-        background-color: lighten($brand-primary, 4%);
+        background-color: lighten($brand-primary, 6%);
     }
 }
 .btn-xl {

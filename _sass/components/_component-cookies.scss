@@ -1,0 +1,25 @@
+.cookies {
+    position: fixed;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: $border-radius-base;
+    border: 1px solid #dedede;
+    right: $grid-gutter-width;
+    bottom: $grid-gutter-width;
+    z-index: $zindex-navbar;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
+    padding: $spacer-md;
+    visibility: hidden;
+    @media (max-width: $screen-sm-min) {
+        right: $grid-gutter-width/2;
+        left: $grid-gutter-width/2;
+        bottom: $grid-gutter-width/2;
+    }
+    &__title {
+        margin-top: 0;
+    }
+    &__button {
+        border-radius: 8px 0;
+        padding: 8px 20px;
+    }
+}
