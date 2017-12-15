@@ -53,18 +53,21 @@ bJekyll = {
             },
             checkCookie: function ( cookieName ) {
                 let userCookie = this.getCookie(cookieName);
+                let self = this;
                 if (userCookie === "") {
-                    let self = this;
                     self.cookiesLinkAccepted.parentElement.classList.add('animation');
                     let cookiesManagerStyle = window.getComputedStyle(this.cookiesLinkAccepted.parentElement),
                         animationDuration   = cookiesManagerStyle.getPropertyValue('animation-duration').replace('s', '');
                     if (animationDuration !== '') {
                         setTimeout(function() {
                             self.cookiesLinkAccepted.parentElement.classList.add('bounceInRight')
-                        }, animationDuration * 1000)
+                        }, animationDuration * 1000);
                     }
 
+
                     this.setCookie(cookieName, "Cookies accepted", 365);
+                } else {
+                    self.cookiesLinkAccepted.parentElement.outerHTML = '';
                 }
             },
             setCookie: function ( cookieName , cookieValue, cookieExparies) {
@@ -88,16 +91,12 @@ bJekyll = {
                     if (animationDuration !== '') {
                         setTimeout(function() {
                             self.parentElement.outerHTML = '';
-                        }, animationDuration * 1000)
+                        }, animationDuration * 1000);
                     }
 
                 });
-
-
-
             }
         }
-
     }
 };
 
@@ -105,12 +104,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
     bJekyll.utilities.linkedElement();
     bJekyll.utilities.createPostsLayout('.posts-wrapper');
     bJekyll.utilities.cookiesManager.checkCookie('bJekyll cookies accepted');
-  });
 
+    // Tiny slider carousel
+    var slider = tns({
+        container: '.tiny-slider',
+        items: 1,
+        nav: false,
+        slideBy: 'page',
+        loop: false,
+        lazyload: true,
+        autoplay: false,
+        controlsText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+    });
 
-//Owl Carousel initlializator
-$(document).ready(function(){
-  $('.owl-carousel').owlCarousel({
-      items: 1
-  });
+    // Initialize library (lazyLoad for images)
+    lozad('.lozad', {
+        threshold: 0.1,
+        load: function(el) {
+            el.src = el.dataset.src;
+
+            if (el.dataset.backgroundImage !== undefined) {
+                el.style.backgroundImage = "url(" + el.dataset.backgroundImage + ")";
+            }
+
+            el.onload = function() {
+                el.classList.add('lazy-fade')
+            }
+        }
+    }).observe()
 });

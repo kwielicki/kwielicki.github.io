@@ -1,6 +1,8 @@
 .footer {
     &__inner {
-        text-align: center;
+        @media (max-width: $screen-sm-min) {
+            text-align: center;
+        }
     }
     .copyright {
         display: block;

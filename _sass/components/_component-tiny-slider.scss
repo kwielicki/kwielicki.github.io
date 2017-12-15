@@ -1,0 +1,13 @@
+.tns-controls {
+    margin-bottom: $spacer-sm;
+    text-align: right;
+    button {
+        background: $border-color-gray;
+        border: 0;
+        padding: 0 $spacer-xs;
+        &[disabled] {
+            cursor: default;
+            opacity: .4;
+        }
+    }
+}

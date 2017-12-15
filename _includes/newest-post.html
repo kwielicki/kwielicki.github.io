@@ -1,6 +1,6 @@
 {% for post in site.posts limit:1 %}
 {% if post.thumbnail %}
-<div class="component newest-post" style="background-image: url({{"/assets/images/banners/blog-banner.jpg" | prepend: site.baseurl}})">
+<div class="component newest-post lozad" data-background-image="{{'/assets/images/banners/blog-banner.jpg' | prepend: site.baseurl}}">
     <div class="newest-post__inner">
         <div class="container">
             <div class="row">

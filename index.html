@@ -7,7 +7,13 @@ layout: main
             {% for post in paginator.posts %}
             <article class="posts-wrapper__element">
                 {% if post.thumbnail %}
-                    <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
+                <figure>
+                    <img
+                        data-src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}"
+                        src="{{"/assets/images/placeholders/img-placeholder-post-lists.jpg"}}"
+                        alt="{{post.title}}"
+                        class="lozad" />
+                </figure>
                 {% else %}
                 {% endif %}
                 <div class="posts-wrapper__content">
@@ -80,12 +86,14 @@ layout: main
         <div class="component latest-posts widget">
             <h3 class="widget__header">Popularne posty</h3>
             <div class="widget__inner">
-                <div class="owl-carousel owl-theme">
+                <div class="tiny-slider">
                     {% for post in site.posts limit:3 %}
                         <div class="latest-post">
                             <div class="latest-post__image">
                                 {% if post.thumbnail %}
-                                    <img src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
+                                    <img class ="tns-lazy-img"
+                                         src="{{"/assets/images/placeholders/img-placeholder-post-lists.jpg"}}" 
+                                         data-src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}" alt="">
                                 {% else %}
                                 {% endif %}
                             </div>

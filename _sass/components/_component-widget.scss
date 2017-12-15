@@ -7,6 +7,7 @@
     &__inner {
         background-color: #f8f8f8;
         padding: $spacer-sm;
+        border-bottom: 3px solid $border-color-gray;
     }
 }
 
@@ -69,23 +70,15 @@
 
 // Latest post
 .latest-post {
-    &__image,
-    &__content {
-        display: table-cell;
-        vertical-align: top;
-    }
-    &__image {
-        max-width: 150px;
-        min-width: 150px;
-    }
     &__title {
         margin: 0;
         font-family: $font-family-base;
+        padding-bottom: $spacer-xs;
     }
     &__data {
         font-size: 12px;
     }
     &__content {
-        padding-left: $spacer-sm;
+        padding-top: $spacer-sm;
     }
 }

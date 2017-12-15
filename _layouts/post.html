@@ -7,7 +7,10 @@ layout: default
         <div class="col-xs-12">
             <article class="componet post" itemscope itemtype="http://schema.org/BlogPosting">
               <header class="post__header">
-                <img src="{{baseurl}}/assets/images/posts/original/{{page.thumbnail}}" alt="">
+                <img class="lozad"
+                     src="{{"/assets/images/placeholders/img-placeholder-post.jpg"}}"
+                     data-src="{{baseurl}}/assets/images/posts/original/{{page.thumbnail}}"
+                     alt="{{page.title}}">
                 <div class="post__media">
                     <div class="post__media--left">
                         <div class="post__data">
