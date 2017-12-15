@@ -30,3 +30,6 @@ gem 'octopress-autoprefixer'
 
 # Seo Tag
 gem 'jekyll-seo-tag'
+
+# Site map
+gem 'jekyll-sitemap'
