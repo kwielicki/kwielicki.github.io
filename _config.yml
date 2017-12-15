@@ -16,9 +16,7 @@
 title: Frontend__PL - blog dla FrontEnd Developerów
 email: krzysiek.wielicki@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Zbiór informacji dla FrontEnd Developerów. Od CSS przez HTML po JavaScript.
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kwielicki.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -44,6 +42,11 @@ disqus:
 
 # Seo tags
 lang: pl_PL
+social:
+  name: Krzysztof Wielicki
+  links:
+    - https://www.linkedin.com/in/krzysztof-wielicki-53a5b610a/
+    - https://github.com/kwielicki
 
 # Build settings
 markdown: kramdown
