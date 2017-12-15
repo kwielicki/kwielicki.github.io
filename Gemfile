@@ -33,3 +33,6 @@ gem 'jekyll-seo-tag'
 
 # Site map
 gem 'jekyll-sitemap'
+
+# Admin
+gem 'jekyll-admin', group: :jekyll_plugins
