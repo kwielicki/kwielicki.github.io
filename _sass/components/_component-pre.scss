@@ -3,6 +3,7 @@ pre {
     overflow: visible;
     margin-top: $spacer-md;
     margin-bottom: $spacer-sm;
+    overflow-x: scroll;
     &::before {
         content: 'Terminal';
         position: absolute;

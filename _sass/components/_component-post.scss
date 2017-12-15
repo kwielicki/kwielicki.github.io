@@ -9,6 +9,9 @@
         border: 1px solid #ddd;
         border-top: 0;
         padding: $spacer-md;
+        @media (max-width: $screen-sm-min) {
+            padding: $grid-gutter-width / 2;
+        }
         &--left,
         &--right {
             display: table-cell;
@@ -28,7 +31,7 @@
         text-align: center;
         font-size: $font-size-h1;
         @media (max-width: $screen-sm-min) {
-            font-size: $font-size-h4;
+            font-size: $font-size-h5;
             margin-bottom: $spacer-sm;
         }
         &--day {
@@ -39,6 +42,9 @@
             color: #fff;
             background-color: $brand-primary;
             font-size: $font-size-h5;
+            @media (max-width: $screen-sm-min) {
+                padding: $spacer-xs / 2;
+            }
         }
         &--day,
         &--footer {

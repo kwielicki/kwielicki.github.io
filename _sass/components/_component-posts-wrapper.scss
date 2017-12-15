@@ -36,6 +36,11 @@
             flex: 0 0 50%;
             @media (max-width: $screen-sm-min) {
                 flex: none;
+                text-overflow: ellipsis;
+                overflow-x: hidden;
+                white-space: nowrap;
+                width: 100%;
+                text-align: left;
             }
         }
     }
