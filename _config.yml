@@ -42,11 +42,12 @@ comments:
 disqus:
    short_name: https-kwielicki-github-io
 
+# Seo tags
+lang: pl_PL
+
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-feed
 
 paginate: 5
 paginate_path: "/page/:num"
@@ -56,8 +57,10 @@ sass:
     style: :compressed
 
 plugins:
+    - jekyll-feed
     - octopress-autoprefixer
     - jekyll-paginate
+    - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

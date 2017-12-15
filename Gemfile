@@ -27,3 +27,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Css autoprefixer
 gem 'octopress-autoprefixer'
+
+# Seo Tag
+gem 'jekyll-seo-tag'
