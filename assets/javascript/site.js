@@ -5,8 +5,8 @@ var bJekyll = bJekyll || {};
 bJekyll = {
     utilities: {
         linkedElement: function() {
-            let expectedAttr     = `[data-site-href]`,
-                expectedClass    = `element--clickable`,
+            let expectedAttr     = '[data-site-href]',
+                expectedClass    = 'element--clickable',
                 expectedElements = document.querySelectorAll(expectedAttr);
 
             expectedElements.forEach(element => {
@@ -99,23 +99,24 @@ bJekyll = {
         }
     }
 };
-
 document.addEventListener("DOMContentLoaded", function(event) {
     bJekyll.utilities.linkedElement();
     bJekyll.utilities.createPostsLayout('.posts-wrapper');
     bJekyll.utilities.cookiesManager.checkCookie('bJekyll cookies accepted');
 
     // Tiny slider carousel
-    var slider = tns({
-        container: '.tiny-slider',
-        items: 1,
-        nav: false,
-        slideBy: 'page',
-        loop: false,
-        lazyload: true,
-        autoplay: false,
-        controlsText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
-    });
+    if (document.querySelectorAll('.tiny-slider').length > 0) {
+        var slider = tns({
+            container: '.tiny-slider',
+            items: 1,
+            nav: false,
+            slideBy: 'page',
+            loop: false,
+            lazyload: true,
+            autoplay: false,
+            controlsText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        });
+    }
 
     // Initialize library (lazyLoad for images)
     lozad('.lozad', {
@@ -131,5 +132,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 el.classList.add('lazy-fade')
             }
         }
-    }).observe()
+    }).observe();
+
 });

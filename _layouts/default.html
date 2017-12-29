@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-site-url="{{site.url}}{{page.url}}" data-site-page-url="{{page.url}}">
+{% if site.environment == 'production' %}
+	<html lang="pl" data-site-url="{{site.url}}{{page.url}}" data-site-page-url="{{page.url}}" data-environment="{{site.environment}}">
+{% else %}
+	<html lang="pl" data-site-url="{{site.url}}{{page.url}}" data-site-page-url="{{page.url}}" data-environment="develop">
+{% endif %}
+
+
 {% include head.html %}
 <body>
 {% include cookies-policy.html %}

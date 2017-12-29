@@ -7,12 +7,10 @@ layout: main
             {% for post in paginator.posts %}
             <article class="posts-wrapper__element">
                 {% if post.thumbnail %}
-                <figure>
-                    <img
-                        data-src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}"
+                <figure><img data-src="{{"/assets/images/posts/thumbnails/" | prepend: site.baseurl | append : post.thumbnail}}"
                         src="{{"/assets/images/placeholders/img-placeholder-post-lists.jpg"}}"
                         alt="{{post.title}}"
-                        class="lozad" />
+                        class="lozad"/>
                 </figure>
                 {% else %}
                 {% endif %}
@@ -43,8 +41,8 @@ layout: main
 
     <div class="col-md-4 col-md-pull-8">
         <!-- Wyszukiwarka -->
-        <form action="{{ site.baseurl }}/search" method="get" class="component form">
-    		<input type="text" id="search_box" name="query" class="form-control form-control--search" placeholder="Wyszukaj...">
+        <form action="{{ site.baseurl }}/wyniki-wyszukiwania" method="get" class="component form">
+    		<input type="text" id="search_box" name="zapytanie" class="form-control form-control--search" placeholder="Wyszukaj...">
     		<button type="submit" value="search" class="btn-submit"><i class="fa fa-search fa-fw"></i></button>
     	</form>
 
