@@ -65,13 +65,6 @@ plugins:
     - jekyll-paginate
     - jekyll-seo-tag
     - jekyll-sitemap
-    - octopress-minify-html
-
-html_press:
-  unquoted_attributes: false
-  drop_empty_values: false
-  strip_crlf: false
-  js_minifier_options: false
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
