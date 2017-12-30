@@ -3,36 +3,29 @@
         <div class="col-xs-12">
             {% if page.comments %}
             <div id="disqus_thread"></div>
-                <script>
-                    /**
-                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
-                    *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-                    *  https://disqus.com/admin/universalcode/#configuration-variables
-                    **/
-                    var disqus_config = function () {
-                        this.page.url = "{{site.url}}{{page.url}}";
-                        this.page.identifier = "{{site.url}}{{page.url}}";
-                        this.page.title = "{{ page.title }}";
-                    };
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "{{site.url}}{{page.url}}";
+                    this.page.identifier = "{{site.url}}{{page.url}}";
+                    this.page.title = "{{ page.title }}";
+                };
 
-                    (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://https-kwielicki-github-io.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://https-kwielicki-github-io.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
 
-                    var disqus_shortname = 'https-kwielicki-github-io';
+                var disqus_shortname = 'https-kwielicki-github-io';
 
-                    /* * * DON'T EDIT BELOW THIS LINE * * */
-                    (function () {
-                        var s = document.createElement('script'); s.async = true;
-                        s.type = 'text/javascript';
-                        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
-                        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                    }());
-                </script>
+                (function () {
+                    var s = document.createElement('script'); s.async = true;
+                    s.type = 'text/javascript';
+                    s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                }());
+            </script>
             {% endif %}
         </div>
     </div>

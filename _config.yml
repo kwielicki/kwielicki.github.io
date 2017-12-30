@@ -66,6 +66,15 @@ plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
 
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

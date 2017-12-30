@@ -10,7 +10,7 @@
                     </ul>
                     <h1 class="newest-post__title">{{ post.title }}</h1>
                     <p class="newest-post__description">{{ post.content | strip_html | truncatewords: 30 }}</p>
-                    <a href="{{ post.url }}" class="btn btn-lg btn-primary">{{ site.read__more }}</a>
+                    <p><a href="{{ post.url }}" class="btn btn-lg btn-primary">{{ site.read__more }}</a></p>
                 </div>
             </div>
         </div>
