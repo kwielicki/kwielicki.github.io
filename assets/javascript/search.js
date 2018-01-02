@@ -74,6 +74,7 @@ var results = idx.search(searchTerm); // Get lunr to perform a search
 displaySearchResults(results, window.store); // We'll write this in the next section
 
 }
+  if (document.querySelector('.form') !== null) {
     document.querySelector('.form').addEventListener('submit', function( event ) {
       const inputEl = this.querySelector('.form-control');
       const inputElValue = inputEl.value;
@@ -81,6 +82,7 @@ displaySearchResults(results, window.store); // We'll write this in the next sec
         event.preventDefault();
       };
     });
+  }
 
     //- Site search validator
     const locationSearch = document.location.search.split("&")[0].replace("?","").split("=")[1];
