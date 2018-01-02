@@ -3,7 +3,7 @@ layout: post
 title:  "HTML5 - optymalizacja kodu pod platformę Blogową"
 author: Krzysztof Wielicki
 date:   2017-12-01 21:17:02 +0100
-tags: ["seo", "semantyka"]
+tags: ["sematyka", "seo"]
 categories: ["html5"]
 thumbnail: blog-introduction.jpg
 comments: true
