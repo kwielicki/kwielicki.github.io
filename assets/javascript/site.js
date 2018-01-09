@@ -4,6 +4,13 @@ var bJekyll = bJekyll || {};
 
 bJekyll = {
     utilities: {
+        detectPlatforms: function() {
+            document.getElementsByTagName('body')[0].setAttribute('data-platform-name', platform.name);
+            document.getElementsByTagName('body')[0].setAttribute('data-platform-version', platform.version);
+            document.getElementsByTagName('body')[0].setAttribute('data-platform-layout', platform.layout);
+            document.getElementsByTagName('body')[0].setAttribute('data-platform-os', platform.os);
+            document.getElementsByTagName('body')[0].setAttribute('data-platform-description', platform.description);
+        },
         linkedElement: function() {
             let expectedAttr     = '[data-site-href]',
                 expectedClass    = 'element--clickable',
@@ -101,6 +108,7 @@ bJekyll = {
 };
 document.addEventListener("DOMContentLoaded", function(event) {
     bJekyll.utilities.linkedElement();
+    bJekyll.utilities.detectPlatforms();
     bJekyll.utilities.createPostsLayout('.posts-wrapper');
     bJekyll.utilities.cookiesManager.checkCookie('bJekyll cookies accepted');
 

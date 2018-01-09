@@ -1,0 +1,23 @@
+{
+  "name": "Frontend__PL",
+  "description": "Zbiór informacji dla FrontEnd Developerów. Od CSS przez HTML po JavaScript.",
+  "version": "1.0.0",
+  "email": "krzysztofwielicki86@gmail.com",
+  "url": "https://kwielicki.github.io",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwielicki/kwielicki.github.io.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015-script": "^1.1.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-uglify": "^3.0.0"
+  }
+}
