@@ -2,6 +2,7 @@
 .header {
     border-bottom: 3px solid rgba(red(#eee), green(#eee), blue(#eee), .7);
     &__logo {
+        display: inline-block;
         font-family: $font-family-monospace;
         margin-top: 8px;
         cursor: pointer;

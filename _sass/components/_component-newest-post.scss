@@ -19,11 +19,20 @@
     &__tag,
     &__title,
     &__description {
-        max-width: $container-tablet / 1.5;
         color: #fff;
+    }
+    &__tag,
+    &__title {
+        max-width: $container-tablet / 1.2;
+        color: #fff;
+    }
+    &__description {
+        max-width: $container-tablet / 1.5;
+        padding-top: $spacer-xs;
     }
     &__title {
         margin-top: 0;
+        text-shadow: 5px 5px 5px #000;
         @media (max-width: $screen-sm-min) {
             font-size: $font-size-h3;
         }
