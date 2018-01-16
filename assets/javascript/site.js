@@ -39,13 +39,13 @@ bJekyll = {
             let buttonElement = elem.querySelectorAll('.btn--posts');
 
             buttonElement.forEach(element => {
-                element.addEventListener('mouseover', function() {
-                    element.classList.add('hovered');
-                    element.parentNode.closest('div').previousSibling.previousElementSibling.classList.add('hovered')
+                element.addEventListener('mouseenter', function( event ) {
+                    element.parentNode.previousSibling.classList.add('hovered');
+                    element.parentNode.previousSibling.previousElementSibling.classList.add('hovered')
                 });
                 element.addEventListener('mouseout', function() {
-                    element.classList.remove('hovered');
-                    element.parentNode.closest('div').previousSibling.previousElementSibling.classList.remove('hovered')
+                    element.parentNode.previousSibling.classList.remove('hovered');
+                    element.parentNode.previousSibling.previousElementSibling.classList.remove('hovered')
                 });
             });
         },
