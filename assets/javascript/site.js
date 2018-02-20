@@ -49,6 +49,17 @@ bJekyll = {
                 });
             });
         },
+        externalLinks: function() {
+            function link_is_external(link_element) {
+                return (link_element.host !== window.location.host);
+            }
+            let links = document.getElementsByTagName('a');
+            for (let i = 0; i < links.length; i++) {
+                if (link_is_external(links[i])) {
+                    links[i].setAttribute('target', '_blank');
+                }
+            }
+        },
         cookiesManager: {
             cookiesLinkAccepted: document.querySelector('.js-cookies-manager--accepted'),
             getCookie: function ( cookieName ) {
@@ -117,6 +128,7 @@ bJekyll = {
 document.addEventListener("DOMContentLoaded", function(event) {
     bJekyll.utilities.linkedElement();
     bJekyll.utilities.detectPlatforms();
+    bJekyll.utilities.externalLinks();
     bJekyll.utilities.createPostsLayout('.posts-wrapper');
     bJekyll.utilities.cookiesManager.checkCookie('bJekyll cookies accepted');
 

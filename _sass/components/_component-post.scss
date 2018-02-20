@@ -80,4 +80,149 @@
             padding-left: 0;
         }
     }
+
+    // Super letter (It's a first letter from article description)
+    .super {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        font-size: 104px;
+        font-weight: 700;
+        text-transform: uppercase;
+        float: left;
+        line-height: 60px;
+        margin: 7px 10px 0 -7px;
+        color: $btn-primary-color;
+    }
+
+    // Article heading style guide
+    .article-blog__title {
+        position: relative;
+        font-size: 35px;
+        padding-top: $spacer-md + 5px;
+        padding-left: $spacer-lg;
+        padding-bottom: $spacer-md + 5px;
+        color: $brand-primary;
+        small {
+            display: block;
+        }
+    }
+    .article-blog__title-number {
+        font-size: 60px;
+        color: $border-color-gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 0.5;
+    }
+    p {
+        &.less {
+            font-size: $font-size-base;
+            color: $btn-primary-color;
+            line-height: 1.4;
+        }
+    }
+    ol {
+        list-style-type: none;
+        counter-reset: list;
+        padding-left: $spacer-lg;
+        li {
+            position: relative;
+            counter-increment: list;
+            padding-left: $spacer-md;
+            &::before {
+                position: absolute;
+                min-width: 20px;
+                min-height: 20px;
+                text-align: center;
+                line-height: 20px;
+                left: 0;
+                top: 5px;
+                content: counter(list);
+                background-color: $brand-primary;
+                color: #fff;
+                border-radius: $border-radius-sm;
+                padding: 2px;
+            }
+            + li {
+                margin-top: $spacer-sm;
+            }
+        }
+        + .article-blog__title {
+            margin-top: $spacer-xl;
+        }
+    }
+
+}
+
+
+// Terminal in post article
+.terminal {
+    $component: &;
+    padding-bottom: $spacer-lg;
+    &__bar {
+        text-align: center;
+        max-width: $terminal-max-width;
+        height: 25px;
+        background-color: $terminal-bar-background-color;
+        margin: 0 auto;
+        font-family: $terminal-font-family;
+        line-height: 1;
+        border-top-left-radius: $border-radius-normal;
+        border-top-right-radius: $border-radius-normal;
+        position: relative;
+    }
+    &__ball {
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        &--red {
+            background-color: $terminal-ball-red;
+            left: -47%;
+            bottom: -20%;
+        }
+        &--yellow {
+            background-color: $terminal-ball-yellow;
+            left: -44%;
+            bottom: 40%;
+        }
+        &--green {
+            background-color: $terminal-ball-green;
+            left: -41%;
+            bottom: 99%;
+        }
+    }
+    &__title {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+    &__screen {
+        background-color: $terminal-background-color;
+        max-width: $terminal-max-width;
+        max-height: $terminal-max-height;
+        margin: 0 auto;
+        padding: $spacer-sm;
+        overflow: auto; 
+    }
+    &__font {
+        color: #fff;
+        font-family: $terminal-font-family;
+        font-size: $terminal-font-size;
+        text-align: left;
+        display: block;
+        white-space: nowrap;
+        padding-right: $spacer-sm;
+    }
+    &__comment {
+        color: $terminal-comment-color;
+        white-space: nowrap;
+        padding-right: $spacer-sm;
+        + #{$component}__font {
+            margin-top: 0;
+        }       
+    }
 }

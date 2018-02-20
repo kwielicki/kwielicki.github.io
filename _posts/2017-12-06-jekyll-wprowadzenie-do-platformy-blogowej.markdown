@@ -12,71 +12,41 @@ comments: true
 layout: post
 ---
 
-O technologii <code>Jekyll</code> dowiedziałem się przypadkowo z agendy jednego z moich kolegów po fachu.
-Z racji tego, że było to na tyle ciekawe wystąpienie aby mnie zainteresować tym zagadnieniem
-postanowiłem *zabrać się do tematu* i  stworzyć
-własnego bloga w oparciu o wcześniej wspomnianego Jekylla wraz z hostingiem na githubie.
+<span class="super">J</span>**ekyll** to platforma o której dowiedziałem się dzięki agendzie jednego z moich kolegów.
+Wystąpienie to zainteresowało mnie tak bardzo, że postanowiłem stworzyć własnego bloga w oparciu o Jekylla oraz  github pages. Niespodziewałem się, że to będzie tak przyjemne. To właśnie dzięki temu, że praca z Jekyllem przebiegała bardzo sprawnie, postanowiłem podzielić się z Wami tym, co udało mi się osiągnąć.
+<div class="clearfix"></div>
+<hr class="hr"/>
+<h2 class="article-blog__title">
+	Jekyll - wybór technologii.
+	<small>Dlaczego zdecydowałem się wybrać tę platformę spośród wielu innych jak Ghost czy Thumblr ?</small>
+	<span class="article-blog__title-number">01</span>
+</h2>
 
-Tyle tytułem wstępu czas przejść do historii którą napisałem wspólnie z Jekyllem ...
+<p class="less">Gruntowne przeanalizowanie dokumentacji Jekylla doprowadziło mnie do przekonania, że posiada on kilka kluczowych właściwośći, które dają mu przewagę nad innymi platformami służącymi do budowania środowisk stricte blogowych.</p>
+<p class="less list--after">Aby zobrazować Ci te atuty zaprezentuje je w postaci listy:</p>
+1. skrupulatnie przygotowana [dokumentacja](https://jekyllrb.com/docs/home/ ) która przeprowadzi Cię krok po kroku począwszy od instalacji wymaganych zależności po uruchomienie podstawowego szkieletu platformy. Ramowa struktura, którą dostaniesz po pierwszym uruchomieniu Jekkyla, jest doskonałym punktem wyjścia do dalszej pracy z tym narzędziem.
+2. podstawą jekylla jest język programania Ruby w którym został napisany, a jego instalacja może zostać przeprowadzona na takich platformach jak Linux, iOS oraz Windows
+3. prace z tą platformą wspomagają użyteczne pluginy takie jak chociażby: [Jekyll Admin](https://github.com/jekyll/jekyll-admin). Zarządzanie m.in. postami staje się bardzo proste. Możesz je tworzyć, edytować i publikować z panelu admina. Niestety to rozwiązanie ma jeden minus - jest ono dostępne wyłącznie lokalnie. Dla osób bardziej wymagających polecam _onlinowy_ odpowiednik tj. [Siteleaf](https://www.siteleaf.com/) - jest to rozwiązanie płatne, ale pozwalające na publikowanie postów bez konieczności ręcznego pushowania zmian do githuba. Jedyne co trzeba zrobić to zsynchronizować swoje konto na siteleaf z repozytorium na githubie
+4. pełna kompatybilność z github pages. Co to znaczy w praktyce? Tyle, co _brak_ zmartwień na temat hostingu, domeny czy protokołu https. A to wszystko za **darmo** - nie wliczając czasu, który poświęcisz na pisanie kodu
+5. stosunkowo niski próg wejścia w tworzeniu customowych templatek. Jest to spowodowane tym, że można je pisać w HTML'u. Podstawowa wiedza dotycząca semantyki tego hipertekstowego języka znaczników w pełni wystarczy aby stworzyć layout, który UX'owo będzie odpowiadał aktualnym trendom
 
-### Jekyll i jego dokumentacja
+<h2 class="article-blog__title">
+	Instalacja Jekylla na Ubuntu 16.04 LTS
+	<small>Zacząłem zgodnie z instrukcją od sprawdzenia, czy mam zainstalowanego rubiego...</small>
+	<span class="article-blog__title-number">02</span>
+</h2>
 
-Jest napisana w bardzo przejrzysty sposób. Szczegółowo, wykorzystując przykłady twórcy w pełni zobrazowali
-cały proces tworzenia bloga. Począwszy od instalacji Jekylla po umieszczeniu go w sieci (hosting - m.in. na <code>github pages</code>);
-<hr/>
+<div class="terminal">
+	<div class="terminal__bar">
+    <span class="terminal__ball terminal__ball--red"></span>
+    <span class="terminal__ball terminal__ball--yellow"></span>
+    <span class="terminal__ball terminal__ball--green"></span>
+		<span class="terminal__title"> Terminal</span>
+  </div>
+  <div class="terminal__screen">
+	  <span class="terminal__comment">// Sprawdzam, czy lub jaką wersję Ruby posiadam</span>
+    <span class="terminal__font">root@10.0.0.1:~$ ruby -v</span>
+  </div>
+</div>
 
-### W jaki sposób udało mi się zainstalować Jekylla na Ubuntu 16.04 LTS
-
-Zacząłem zgodnie z instrukcją od sprawdzenia, czy mam zainstalowanego rubiego. U mnie było wszystko w porządku, ale gdyby u Ciebie było inaczej
-polecam zapoznać się z ich stroną w celu przeprowadzenia instalacji (Ruby jest wymagany) -
-<a href="https://www.ruby-lang.org/pl/documentation/installation/" target="blank">ruby-lang.org/pl/</a>
-
-Wykonanie poniższego polecenia w terminalu:
-<pre>
-\$ ruby -v
-</pre>
-powinno pokazać wynik podobny do tego (mogą różnić się wersje)
-<pre>
-ruby 2.3.1p112 (2016-04-26) \[x86_64-linux-gnu\]
-</pre>
-
-Teraz możesz przejść do instalacji samego Jekylla wykonując polecenie
-<pre>
-\$ gem install jekyll bundler
-</pre>
-
-Sam proces instalacji może potrwać 3-4 minuty. Po jej zakończeniu możemy sprawdzić aktualny status wykonując
-<pre>
-\$ jekyll --version
-// Oczekiwany rezultat
-jekyll 3.6.2
-</pre>
-
-W tym momencie mamy zainstalowaną platformę, która jest przygotowana do implementacji Bloga.
-
-Twórcy przewidzieli dwa scenariusze tj.:
-
-1. zainicjalizowanie Jekylla w już istniejącym katalogu. W tym celu należy wykonać
-   <code>$ jekyll new . --force</code>.
-
-2. utworzenie katalogu a następnie zainstalowanie Jekylla <code>$ jekyll new nazwa_bloga</code>
-
-Jekyll instaluje się ze standardową templatką, która nie jest zbyt piękna, ale pozwala na sprawdzenie, czy to w ogóle działa.
-Ta skórka, to bardzo dobry punkt wyjściowy do stworzenia swojej własnej.
-
-Aby uruchomić server wraz z Twoim demonstracyjnym blogiem, należy w terminalu wykonać polecenie (oczywiście przebywając w dedykowanym katalogu)
-<pre>
-\$ bundle exec jekyll serve
-// Zostanie on uruchomiony na standardowym porcie http://localhost:4000/
-</pre>
-
-Port 4000 jest domyślnym, ale nie oznacza to że jedynym. Można go zmienić w pliku konfiguracyjnym <code>config.yml</code> ustawiając zmienną
-<pre>
-// plik konfiguracyjny _config.yml
-port: numer-portu // np. port: 5500
-</pre>
-
-<hr/>
-To by było na tyle jeśli chodzi o pierwszą część. Mam nadzieje, że ten artykuł pomoże Ci lepiej zrozumieć sam proces instalacji.
-
-Część druga już wkrótce. A w niej szeroki opis pliku koniguracyjnego <code>_config.yml</code>...
+<p class="less">Polecenie to powinno zwrócić Ci wynik podobny do  - <code>ruby 2.3.1p112 (2016-04-26) \[x86_64-linux-gnu\]</code>. Jeśli jednak dostałeś komunikat błedu tj. okazało się, że nie posiadasz wymaganego oprogramowania skorzystaj ze strony <a href="https://www.ruby-lang.org/pl/">Język programowania Ruby</a> w celu jego instalacji.</p>

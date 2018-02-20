@@ -22,6 +22,5 @@ gulp.task('js-concatenate', function() {
         }))
     	.pipe(concat({ path: 'bundle.min.js', stat: { mode: 0666 }}))
     .pipe(uglify())
-	.pipe(sourcemaps.write())
     .pipe(gulp.dest('assets/javascript/'));
 });
