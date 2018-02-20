@@ -1,88 +1,62 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+---
 title: Frontend__PL - blog dla FrontEnd Developerów
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 email: krzysiek.wielicki@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Zbiór informacji dla FrontEnd Developerów. Od CSS przez HTML po JavaScript.
-permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kwielicki.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+description: Zbiór informacji dla FrontEnd Developerów. Od CSS przez HTML po JavaScript.
+permalink: ":title/"
+baseurl: ''
+url: https://kwielicki.github.io
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username: jekyll
 author: Krzysztof Wielicki
-
-# Buttons labels
 read__more: Czytaj artykuł
 pagination__next: Przejdź do strony
 pagination__prev: Wróć do strony
-
-# Global labels
 category__label: Kategorie
 tags__label: Tagi
 about_blog__label: Kilka słów o blogu
-
-# Disquis
 comments:
-   provider: disqus
+  provider: disqus
 disqus:
-   short_name: https-kwielicki-github-io
-
-# Seo tags
+  short_name: https-kwielicki-github-io
 lang: pl_PL
 social:
   name: Krzysztof Wielicki
   links:
-    - https://www.linkedin.com/in/krzysztof-wielicki-53a5b610a/
-    - https://github.com/kwielicki
-
-# Build settings
+  - https://www.linkedin.com/in/krzysztof-wielicki-53a5b610a/
+  - https://github.com/kwielicki
 markdown: kramdown
 theme: minima
-
 paginate: 5
 paginate_path: "/page/:num"
-
 sass:
-    sass_dir: _sass
-    style: :compressed
-
+  sass_dir: _sass
+  style: :compressed
 plugins:
-    - jekyll-feed
-    - octopress-autoprefixer
-    - jekyll-paginate
-    - jekyll-seo-tag
-    - jekyll-sitemap
-
+- jekyll-feed
+- octopress-autoprefixer
+- jekyll-paginate
+- jekyll-seo-tag
+- jekyll-sitemap
 compress_html:
   clippings: all
-  comments: ["<!-- ", " -->"]
+  comments:
+  - "<!-- "
+  - " -->"
   endings: all
   ignore:
-    envs: [local]
+    envs:
+    - local
   blanklines: false
   profile: false
-  startings: [html, head, body]
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  startings:
+  - html
+  - head
+  - body
